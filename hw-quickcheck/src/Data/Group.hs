@@ -10,8 +10,8 @@ class Monoid a => Group a where
 
   inverse :: a -> a
   -- ^ Group inverse.
-  inverse = error "TODO: `inverse`"
+  inverse a = mempty </> a
 
   (</>) :: a -> a -> a
   -- ^ Group division.
-  x </> y = error "TODO: `</>`"
+  x </> y = x <> inverse y
